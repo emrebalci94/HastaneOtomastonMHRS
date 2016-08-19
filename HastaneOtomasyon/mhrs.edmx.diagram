@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd11f31f03de4d2096bf8c2bdc4fca7a" Name="Diagram1">
+        <EntityTypeShape EntityType="MhrsDBModel.Hasta" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.Ilaclar" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.Personel" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.PersonelIzin" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.PersonelTip" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.Randevu" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.Recete" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.ReceteIlac" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="MhrsDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="MhrsDBModel.FK_Randevu_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_ReceteIlac_Ilaclar" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_Personel_PersonelTip" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_PersonelIzin_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_Randevu_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_Recete_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="MhrsDBModel.FK_ReceteIlac_Recete" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

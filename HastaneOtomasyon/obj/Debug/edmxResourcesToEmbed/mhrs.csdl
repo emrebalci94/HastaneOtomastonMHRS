@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MhrsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hasta">
+    <Key>
+      <PropertyRef Name="HastaId" />
+    </Key>
+    <Property Name="HastaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Cinsiyet" Type="Boolean" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Ilaclar">
+    <Key>
+      <PropertyRef Name="IlacId" />
+    </Key>
+    <Property Name="IlacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PersonelTipId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FotoPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PersonelIzin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelId" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PersonelTip">
+    <Key>
+      <PropertyRef Name="PersonelTipId" />
+    </Key>
+    <Property Name="PersonelTipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsRandevuAlabilir" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Randevu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HastaId" Type="Int32" />
+    <Property Name="PersonelId" Type="Int32" />
+    <Property Name="RandevuSaati" Type="DateTime" Precision="3" />
+    <Property Name="createDate" Type="DateTime" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Recete">
+    <Key>
+      <PropertyRef Name="ReceteId" />
+    </Key>
+    <Property Name="ReceteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HastaId" Type="Int32" Nullable="false" />
+    <Property Name="PersonelId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ReceteIlac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReceteId" Type="Int32" />
+    <Property Name="IlacId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="MhrsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hasta" EntityType="Self.Hasta" />
+    <EntitySet Name="Ilaclar" EntityType="Self.Ilaclar" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" />
+    <EntitySet Name="PersonelIzin" EntityType="Self.PersonelIzin" />
+    <EntitySet Name="PersonelTip" EntityType="Self.PersonelTip" />
+    <EntitySet Name="Randevu" EntityType="Self.Randevu" />
+    <EntitySet Name="Recete" EntityType="Self.Recete" />
+    <EntitySet Name="ReceteIlac" EntityType="Self.ReceteIlac" />
+  </EntityContainer>
+</Schema>

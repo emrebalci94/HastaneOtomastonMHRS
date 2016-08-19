@@ -1,0 +1,60 @@
+c:\users\palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe.config
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.pdb
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csprojResolveAssemblyReference.cache
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Properties.Resources.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.GenerateResource.Cache
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.exe
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.pdb
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.GirisForm.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.GirisYap.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaKayit.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Anaform.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelEkle.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelGuncelle.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelSil.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.RandevuAl.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaTumRandevularim.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaProfilDuzenle.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorRandevularim.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.ReceteYaz.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorProfilDuzenle.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorHastam.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorIzın.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorListesi.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelRaporAl.resources
+C:\Users\Palyosemre\documents\visual studio 2015\Projects\HastaneOtomasyon\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaRapor.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe.config
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.exe
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.pdb
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.pdb
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csprojResolveAssemblyReference.cache
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Anaform.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorHastam.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorIzın.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorListesi.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorProfilDuzenle.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.DoktorRandevularim.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaRapor.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelRaporAl.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.GirisForm.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.GirisYap.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaKayit.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaProfilDuzenle.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.HastaTumRandevularim.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelEkle.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelGuncelle.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.PersonelSil.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Properties.Resources.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.RandevuAl.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.ReceteYaz.resources
+C:\Users\Palyosemre\Documents\GitHub\HastaneOtomasyonMHRS\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.GenerateResource.Cache

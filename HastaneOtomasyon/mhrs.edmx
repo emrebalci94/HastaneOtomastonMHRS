@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MhrsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Hasta">
+          <Key>
+            <PropertyRef Name="HastaId" />
+          </Key>
+          <Property Name="HastaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="Cinsiyet" Type="bit" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Ilaclar">
+          <Key>
+            <PropertyRef Name="IlacId" />
+          </Key>
+          <Property Name="IlacId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonelTipId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="Foto" Type="image" />
+          <Property Name="FotoPath" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="PersonelIzin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="PersonelTip">
+          <Key>
+            <PropertyRef Name="PersonelTipId" />
+          </Key>
+          <Property Name="PersonelTipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsRandevuAlabilir" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Randevu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HastaId" Type="int" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="RandevuSaati" Type="datetime" />
+          <Property Name="createDate" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Recete">
+          <Key>
+            <PropertyRef Name="ReceteId" />
+          </Key>
+          <Property Name="ReceteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HastaId" Type="int" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="ReceteIlac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceteId" Type="int" />
+          <Property Name="IlacId" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Personel_PersonelTip">
+          <End Role="PersonelTip" Type="Self.PersonelTip" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonelTip">
+              <PropertyRef Name="PersonelTipId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="PersonelTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonelIzin_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="PersonelIzin" Type="Self.PersonelIzin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="PersonelIzin">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Randevu_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="0..1" />
+          <End Role="Randevu" Type="Self.Randevu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaId" />
+            </Principal>
+            <Dependent Role="Randevu">
+              <PropertyRef Name="HastaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Randevu_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Randevu" Type="Self.Randevu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Randevu">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recete_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Recete" Type="Self.Recete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Recete">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceteIlac_Ilaclar">
+          <End Role="Ilaclar" Type="Self.Ilaclar" Multiplicity="0..1" />
+          <End Role="ReceteIlac" Type="Self.ReceteIlac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilaclar">
+              <PropertyRef Name="IlacId" />
+            </Principal>
+            <Dependent Role="ReceteIlac">
+              <PropertyRef Name="IlacId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceteIlac_Recete">
+          <End Role="Recete" Type="Self.Recete" Multiplicity="0..1" />
+          <End Role="ReceteIlac" Type="Self.ReceteIlac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recete">
+              <PropertyRef Name="ReceteId" />
+            </Principal>
+            <Dependent Role="ReceteIlac">
+              <PropertyRef Name="ReceteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MhrsDBModelStoreContainer">
+          <EntitySet Name="Hasta" EntityType="Self.Hasta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilaclar" EntityType="Self.Ilaclar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelIzin" EntityType="Self.PersonelIzin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelTip" EntityType="Self.PersonelTip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Randevu" EntityType="Self.Randevu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recete" EntityType="Self.Recete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReceteIlac" EntityType="Self.ReceteIlac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Personel_PersonelTip" Association="Self.FK_Personel_PersonelTip">
+            <End Role="PersonelTip" EntitySet="PersonelTip" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonelIzin_Personel" Association="Self.FK_PersonelIzin_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="PersonelIzin" EntitySet="PersonelIzin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Randevu_Hasta" Association="Self.FK_Randevu_Hasta">
+            <End Role="Hasta" EntitySet="Hasta" />
+            <End Role="Randevu" EntitySet="Randevu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Randevu_Personel" Association="Self.FK_Randevu_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Randevu" EntitySet="Randevu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recete_Personel" Association="Self.FK_Recete_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Recete" EntitySet="Recete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceteIlac_Ilaclar" Association="Self.FK_ReceteIlac_Ilaclar">
+            <End Role="Ilaclar" EntitySet="Ilaclar" />
+            <End Role="ReceteIlac" EntitySet="ReceteIlac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceteIlac_Recete" Association="Self.FK_ReceteIlac_Recete">
+            <End Role="Recete" EntitySet="Recete" />
+            <End Role="ReceteIlac" EntitySet="ReceteIlac" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MhrsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Hasta">
+          <Key>
+            <PropertyRef Name="HastaId" />
+          </Key>
+          <Property Name="HastaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="Cinsiyet" Type="Boolean" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Randevu" Relationship="Self.FK_Randevu_Hasta" FromRole="Hasta" ToRole="Randevu" />
+        </EntityType>
+        <EntityType Name="Ilaclar">
+          <Key>
+            <PropertyRef Name="IlacId" />
+          </Key>
+          <Property Name="IlacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ReceteIlac" Relationship="Self.FK_ReceteIlac_Ilaclar" FromRole="Ilaclar" ToRole="ReceteIlac" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonelTipId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FotoPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="PersonelTip" Relationship="Self.FK_Personel_PersonelTip" FromRole="Personel" ToRole="PersonelTip" />
+          <NavigationProperty Name="PersonelIzin" Relationship="Self.FK_PersonelIzin_Personel" FromRole="Personel" ToRole="PersonelIzin" />
+          <NavigationProperty Name="Randevu" Relationship="Self.FK_Randevu_Personel" FromRole="Personel" ToRole="Randevu" />
+          <NavigationProperty Name="Recete" Relationship="Self.FK_Recete_Personel" FromRole="Personel" ToRole="Recete" />
+        </EntityType>
+        <EntityType Name="PersonelIzin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_PersonelIzin_Personel" FromRole="PersonelIzin" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="PersonelTip">
+          <Key>
+            <PropertyRef Name="PersonelTipId" />
+          </Key>
+          <Property Name="PersonelTipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsRandevuAlabilir" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_PersonelTip" FromRole="PersonelTip" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Randevu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HastaId" Type="Int32" />
+          <Property Name="PersonelId" Type="Int32" />
+          <Property Name="RandevuSaati" Type="DateTime" Precision="3" />
+          <Property Name="createDate" Type="DateTime" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Hasta" Relationship="Self.FK_Randevu_Hasta" FromRole="Randevu" ToRole="Hasta" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Randevu_Personel" FromRole="Randevu" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Recete">
+          <Key>
+            <PropertyRef Name="ReceteId" />
+          </Key>
+          <Property Name="ReceteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HastaId" Type="Int32" Nullable="false" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Recete_Personel" FromRole="Recete" ToRole="Personel" />
+          <NavigationProperty Name="ReceteIlac" Relationship="Self.FK_ReceteIlac_Recete" FromRole="Recete" ToRole="ReceteIlac" />
+        </EntityType>
+        <EntityType Name="ReceteIlac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceteId" Type="Int32" />
+          <Property Name="IlacId" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Ilaclar" Relationship="Self.FK_ReceteIlac_Ilaclar" FromRole="ReceteIlac" ToRole="Ilaclar" />
+          <NavigationProperty Name="Recete" Relationship="Self.FK_ReceteIlac_Recete" FromRole="ReceteIlac" ToRole="Recete" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Randevu_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="0..1" />
+          <End Role="Randevu" Type="Self.Randevu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaId" />
+            </Principal>
+            <Dependent Role="Randevu">
+              <PropertyRef Name="HastaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceteIlac_Ilaclar">
+          <End Role="Ilaclar" Type="Self.Ilaclar" Multiplicity="0..1" />
+          <End Role="ReceteIlac" Type="Self.ReceteIlac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilaclar">
+              <PropertyRef Name="IlacId" />
+            </Principal>
+            <Dependent Role="ReceteIlac">
+              <PropertyRef Name="IlacId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_PersonelTip">
+          <End Role="PersonelTip" Type="Self.PersonelTip" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonelTip">
+              <PropertyRef Name="PersonelTipId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="PersonelTipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonelIzin_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="PersonelIzin" Type="Self.PersonelIzin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="PersonelIzin">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Randevu_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Randevu" Type="Self.Randevu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Randevu">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recete_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+          <End Role="Recete" Type="Self.Recete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Recete">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceteIlac_Recete">
+          <End Role="Recete" Type="Self.Recete" Multiplicity="0..1" />
+          <End Role="ReceteIlac" Type="Self.ReceteIlac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recete">
+              <PropertyRef Name="ReceteId" />
+            </Principal>
+            <Dependent Role="ReceteIlac">
+              <PropertyRef Name="ReceteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MhrsDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Hasta" EntityType="Self.Hasta" />
+          <EntitySet Name="Ilaclar" EntityType="Self.Ilaclar" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" />
+          <EntitySet Name="PersonelIzin" EntityType="Self.PersonelIzin" />
+          <EntitySet Name="PersonelTip" EntityType="Self.PersonelTip" />
+          <EntitySet Name="Randevu" EntityType="Self.Randevu" />
+          <EntitySet Name="Recete" EntityType="Self.Recete" />
+          <EntitySet Name="ReceteIlac" EntityType="Self.ReceteIlac" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Randevu_Hasta" Association="Self.FK_Randevu_Hasta">
+            <End Role="Hasta" EntitySet="Hasta" />
+            <End Role="Randevu" EntitySet="Randevu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceteIlac_Ilaclar" Association="Self.FK_ReceteIlac_Ilaclar">
+            <End Role="Ilaclar" EntitySet="Ilaclar" />
+            <End Role="ReceteIlac" EntitySet="ReceteIlac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_PersonelTip" Association="Self.FK_Personel_PersonelTip">
+            <End Role="PersonelTip" EntitySet="PersonelTip" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonelIzin_Personel" Association="Self.FK_PersonelIzin_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="PersonelIzin" EntitySet="PersonelIzin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Randevu_Personel" Association="Self.FK_Randevu_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Randevu" EntitySet="Randevu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recete_Personel" Association="Self.FK_Recete_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Recete" EntitySet="Recete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceteIlac_Recete" Association="Self.FK_ReceteIlac_Recete">
+            <End Role="Recete" EntitySet="Recete" />
+            <End Role="ReceteIlac" EntitySet="ReceteIlac" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MhrsDBModelStoreContainer" CdmEntityContainer="MhrsDBEntities1">
+          <EntitySetMapping Name="Hasta">
+            <EntityTypeMapping TypeName="MhrsDBModel.Hasta">
+              <MappingFragment StoreEntitySet="Hasta">
+                <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilaclar">
+            <EntityTypeMapping TypeName="MhrsDBModel.Ilaclar">
+              <MappingFragment StoreEntitySet="Ilaclar">
+                <ScalarProperty Name="IlacId" ColumnName="IlacId" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="MhrsDBModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="PersonelTipId" ColumnName="PersonelTipId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="FotoPath" ColumnName="FotoPath" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonelIzin">
+            <EntityTypeMapping TypeName="MhrsDBModel.PersonelIzin">
+              <MappingFragment StoreEntitySet="PersonelIzin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonelTip">
+            <EntityTypeMapping TypeName="MhrsDBModel.PersonelTip">
+              <MappingFragment StoreEntitySet="PersonelTip">
+                <ScalarProperty Name="PersonelTipId" ColumnName="PersonelTipId" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="IsRandevuAlabilir" ColumnName="IsRandevuAlabilir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Randevu">
+            <EntityTypeMapping TypeName="MhrsDBModel.Randevu">
+              <MappingFragment StoreEntitySet="Randevu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="RandevuSaati" ColumnName="RandevuSaati" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recete">
+            <EntityTypeMapping TypeName="MhrsDBModel.Recete">
+              <MappingFragment StoreEntitySet="Recete">
+                <ScalarProperty Name="ReceteId" ColumnName="ReceteId" />
+                <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceteIlac">
+            <EntityTypeMapping TypeName="MhrsDBModel.ReceteIlac">
+              <MappingFragment StoreEntitySet="ReceteIlac">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceteId" ColumnName="ReceteId" />
+                <ScalarProperty Name="IlacId" ColumnName="IlacId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MhrsDBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

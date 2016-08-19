@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MhrsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hasta">
+    <Key>
+      <PropertyRef Name="HastaId" />
+    </Key>
+    <Property Name="HastaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Soyad" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="DogumTarihi" Type="date" />
+    <Property Name="Cinsiyet" Type="bit" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Ilaclar">
+    <Key>
+      <PropertyRef Name="IlacId" />
+    </Key>
+    <Property Name="IlacId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Soyad" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="PersonelTipId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="Foto" Type="image" />
+    <Property Name="FotoPath" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PersonelIzin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PersonelTip">
+    <Key>
+      <PropertyRef Name="PersonelTipId" />
+    </Key>
+    <Property Name="PersonelTipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="IsRandevuAlabilir" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Randevu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HastaId" Type="int" />
+    <Property Name="PersonelId" Type="int" />
+    <Property Name="RandevuSaati" Type="datetime" />
+    <Property Name="createDate" Type="date" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Recete">
+    <Key>
+      <PropertyRef Name="ReceteId" />
+    </Key>
+    <Property Name="ReceteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HastaId" Type="int" Nullable="false" />
+    <Property Name="PersonelId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ReceteIlac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReceteId" Type="int" />
+    <Property Name="IlacId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="MhrsDBModelStoreContainer">
+    <EntitySet Name="Hasta" EntityType="Self.Hasta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ilaclar" EntityType="Self.Ilaclar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonelIzin" EntityType="Self.PersonelIzin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonelTip" EntityType="Self.PersonelTip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Randevu" EntityType="Self.Randevu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recete" EntityType="Self.Recete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceteIlac" EntityType="Self.ReceteIlac" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

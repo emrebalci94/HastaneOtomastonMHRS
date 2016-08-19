@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MhrsDBModelStoreContainer" CdmEntityContainer="MhrsDBEntitiess">
+    <EntitySetMapping Name="Hasta">
+      <EntityTypeMapping TypeName="MhrsDBModel.Hasta">
+        <MappingFragment StoreEntitySet="Hasta">
+          <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+          <ScalarProperty Name="Tc" ColumnName="Tc" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ilaclar">
+      <EntityTypeMapping TypeName="MhrsDBModel.Ilaclar">
+        <MappingFragment StoreEntitySet="Ilaclar">
+          <ScalarProperty Name="IlacId" ColumnName="IlacId" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personel">
+      <EntityTypeMapping TypeName="MhrsDBModel.Personel">
+        <MappingFragment StoreEntitySet="Personel">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="Tc" ColumnName="Tc" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="PersonelTipId" ColumnName="PersonelTipId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="FotoPath" ColumnName="FotoPath" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelIzin">
+      <EntityTypeMapping TypeName="MhrsDBModel.PersonelIzin">
+        <MappingFragment StoreEntitySet="PersonelIzin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelTip">
+      <EntityTypeMapping TypeName="MhrsDBModel.PersonelTip">
+        <MappingFragment StoreEntitySet="PersonelTip">
+          <ScalarProperty Name="PersonelTipId" ColumnName="PersonelTipId" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="IsRandevuAlabilir" ColumnName="IsRandevuAlabilir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recete">
+      <EntityTypeMapping TypeName="MhrsDBModel.Recete">
+        <MappingFragment StoreEntitySet="Recete">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Teshis" ColumnName="Teshis" />
+          <ScalarProperty Name="ReceteId" ColumnName="ReceteId" />
+          <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceteIlac">
+      <EntityTypeMapping TypeName="MhrsDBModel.ReceteIlac">
+        <MappingFragment StoreEntitySet="ReceteIlac">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReceteId" ColumnName="ReceteId" />
+          <ScalarProperty Name="IlacId" ColumnName="IlacId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MhrsDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Randevu">
+      <EntityTypeMapping TypeName="MhrsDBModel.Randevu">
+        <MappingFragment StoreEntitySet="Randevu">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RandevuTarihi" ColumnName="RandevuTarihi" />
+          <ScalarProperty Name="RandevuSaati" ColumnName="RandevuSaati" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="HastaId" ColumnName="HastaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

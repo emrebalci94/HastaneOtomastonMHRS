@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1BDE360-149C-4637-ABDB-738ACDD9E076}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HastaneOtomasyon</RootNamespace>
+    <AssemblyName>HastaneOtomasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anaform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anaform.Designer.cs">
+      <DependentUpon>Anaform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbIslemleri.cs" />
+    <Compile Include="DoktorHastam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorHastam.Designer.cs">
+      <DependentUpon>DoktorHastam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorIzın.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorIzın.Designer.cs">
+      <DependentUpon>DoktorIzın.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorListesi.Designer.cs">
+      <DependentUpon>DoktorListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorProfilDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorProfilDuzenle.Designer.cs">
+      <DependentUpon>DoktorProfilDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorRandevularim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorRandevularim.Designer.cs">
+      <DependentUpon>DoktorRandevularim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaRapor.Designer.cs">
+      <DependentUpon>HastaRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelRaporAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelRaporAl.Designer.cs">
+      <DependentUpon>PersonelRaporAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisForm.Designer.cs">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisYap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisYap.Designer.cs">
+      <DependentUpon>GirisYap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hasta.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HastaKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaKayit.Designer.cs">
+      <DependentUpon>HastaKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaneMhrs.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HastaneMhrs.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HastaneMhrs.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HastaneMhrs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HastaneMhrs.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="HastaProfilDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaProfilDuzenle.Designer.cs">
+      <DependentUpon>HastaProfilDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaTumRandevularim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaTumRandevularim.Designer.cs">
+      <DependentUpon>HastaTumRandevularim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ilaclar.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KontrolIslemleri.cs" />
+    <Compile Include="ListelemeIslemleri.cs" />
+    <Compile Include="Personel.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEkle.Designer.cs">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGuncelle.Designer.cs">
+      <DependentUpon>PersonelGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelIzin.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelSil.Designer.cs">
+      <DependentUpon>PersonelSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelTip.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Randevu.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RandevuAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuAl.Designer.cs">
+      <DependentUpon>RandevuAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recete.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReceteIlac.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReceteYaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceteYaz.Designer.cs">
+      <DependentUpon>ReceteYaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>HastaneMhrs.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Anaform.resx">
+      <DependentUpon>Anaform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorHastam.resx">
+      <DependentUpon>DoktorHastam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorIzın.resx">
+      <DependentUpon>DoktorIzın.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorListesi.resx">
+      <DependentUpon>DoktorListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorProfilDuzenle.resx">
+      <DependentUpon>DoktorProfilDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorRandevularim.resx">
+      <DependentUpon>DoktorRandevularim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaRapor.resx">
+      <DependentUpon>HastaRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelRaporAl.resx">
+      <DependentUpon>PersonelRaporAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisForm.resx">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisYap.resx">
+      <DependentUpon>GirisYap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaKayit.resx">
+      <DependentUpon>HastaKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaProfilDuzenle.resx">
+      <DependentUpon>HastaProfilDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaTumRandevularim.resx">
+      <DependentUpon>HastaTumRandevularim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEkle.resx">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGuncelle.resx">
+      <DependentUpon>PersonelGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelSil.resx">
+      <DependentUpon>PersonelSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RandevuAl.resx">
+      <DependentUpon>RandevuAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceteYaz.resx">
+      <DependentUpon>ReceteYaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="HastaneMhrs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HastaneMhrs.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HastaneMhrs.edmx.diagram">
+      <DependentUpon>HastaneMhrs.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HastaneMhrs.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HastaneMhrs.edmx</DependentUpon>
+      <LastGenOutput>HastaneMhrs.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HastaneMhrs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HastaneMhrs.edmx</DependentUpon>
+      <LastGenOutput>HastaneMhrs.cs</LastGenOutput>
+    </Content>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
